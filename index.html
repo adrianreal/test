@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Take Notes Online</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="google-adsense-account" content="ca-pub-7107771617277538">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="app">
         <header>
-            <h1>Free Notetaking Tool </h1>
+            <h1>Take Notes Online - Free</h1>
         </header>
         <div class="content">
             <div class="inputs">
                 <h2>Add Note</h2>
                 <textarea id="noteInput" placeholder="Type your note here..."></textarea>
                 <input type="text" id="categoryInput" placeholder="Enter category">
-                <button onclick="addNote()">Add Note</button>
+                <button type="button" onclick="addNote()">Add Note</button>
 
                 <h2>Search and Filter</h2>
                 <input type="text" id="searchInput" placeholder="Search notes..." oninput="searchNotes()">
@@ -30,6 +30,9 @@
                 <ul id="notesList"></ul>
             </div>
         </div>
+        <footer>
+            <p>&copy; 2024 Take Notes Online. All rights reserved.</p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
