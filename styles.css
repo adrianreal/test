@@ -126,3 +126,22 @@ li {
 .delete-btn:hover {
     background: #5c67f2; /* Darker shade on hover */
 }
+
+/* Existing CSS rules... */
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .inputs, .notes-display {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .inputs {
+        margin-bottom: 20px; /* Space between inputs and notes on mobile */
+    }
+}
+
