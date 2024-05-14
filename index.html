@@ -12,13 +12,20 @@
 <body>
     <div class="app">
         <header>
-            <h1>Take Notes Online - Free</h1>
+            <div class="header-content">
+                <img src="path/to/your/logo.png" alt="Logo" class="logo">
+                <h1>Take Notes Online - Free</h1>
+            </div>
+            <ul class="note">
+                <li><i class="fa fa-check-circle"></i> No login needed & Free to use!</li>
+                <li><i class="fa fa-check-circle"></i> Notes are stored on your device. Do not delete browser data to keep your notes</li>
+            </ul>
         </header>
         <div class="content">
             <div class="inputs">
                 <h2>Add Note</h2>
                 <textarea id="noteInput" placeholder="Type your note here..."></textarea>
-                <input type="text" id="categoryInput" placeholder="Enter category">
+                <input type="text" id="categoryInput" placeholder="Enter category (optional)">
                 <button type="button" onclick="addNote()">Add Note</button>
 
                 <h2>Search and Filter</h2>
@@ -37,5 +44,6 @@
         </footer>
     </div>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
 </html>
