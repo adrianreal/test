@@ -36,7 +36,8 @@ function displayNotes() {
     notes.forEach((note, index) => {
         if (categoryFilter === "" || note.category === categoryFilter) {
             const noteElement = document.createElement('li');
-            noteElement.innerHTML = `${note.text} <span class="note-category">- ${note.category}</span>`;
+            noteElement.className = 'note-item';
+            noteElement.innerHTML = `<div><span class="note-text">${note.text}</span><span class="note-category">- ${note.category}</span></div>`;
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'X';
             deleteButton.className = 'delete-btn';
@@ -71,7 +72,8 @@ function searchNotes() {
     
     filteredNotes.forEach((note, index) => {
         const noteElement = document.createElement('li');
-        noteElement.innerHTML = `${note.text} <span class="note-category">- ${note.category}</span>`;
+        noteElement.className = 'note-item';
+        noteElement.innerHTML = `<div><span class="note-text">${note.text}</span><span class="note-category">- ${note.category}</span></div>`;
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'X';
         deleteButton.className = 'delete-btn';
@@ -80,4 +82,3 @@ function searchNotes() {
         notesList.appendChild(noteElement);
     });
 }
-
