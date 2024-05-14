@@ -9,7 +9,7 @@ body, html {
 
 /* Main application container styling */
 .app {
-    max-width: 1200px; /* Adjusted width for a wider layout */
+    max-width: 1400px; /* Adjusted width for a wider layout */
     margin: 20px auto;
     padding: 20px;
     background: #ffffff; /* White background for the main app area */
@@ -26,13 +26,13 @@ body, html {
 
 /* Input area styling */
 .inputs {
-    width: 35%; /* Reduced width to balance the layout */
+    width: 40%; /* Reduced width to balance the layout */
     margin-right: 2%; /* Space between input and notes area */
 }
 
 /* Notes display area styling */
 .notes-display {
-    width: 63%; /* Increased width for note display area */
+    width: 57%; /* Increased width for note display area */
     background-color: #fffeeb; /* Soft yellow for note-taking area */
     padding: 10px; /* Padding inside the notes area */
     border-radius: 5px; /* Rounded corners for the notes area */
@@ -40,9 +40,43 @@ body, html {
 }
 
 /* Styling for headers within the app */
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space below header content */
+}
+
+.logo {
+    height: 50px; /* Adjust height as needed */
+    margin-right: 15px; /* Space between logo and heading */
+}
+
 h1, h2 {
     color: #333; /* Dark grey for headings */
     margin-bottom: 10px; /* Space below headings */
+}
+
+.note {
+    color: #666; /* Lighter grey for the note text */
+    font-size: 14px; /* Smaller font size */
+    margin-bottom: 20px; /* Space below the note */
+    padding-left: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list style */
+}
+
+.note li {
+    margin-bottom: 10px; /* Space between list items */
+    background: #e8f5e9; /* Light green background for better visibility */
+    padding: 10px 15px; /* Padding for a nicer appearance */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    display: flex; /* Flexbox for icon alignment */
+    align-items: center; /* Vertically center the icon with the text */
+}
+
+.note li i {
+    margin-right: 10px; /* Space between icon and text */
+    color: #4caf50; /* Icon color */
 }
 
 /* Form elements styling */
@@ -77,50 +111,43 @@ ul {
 }
 
 /* Individual note styling */
-li {
+li.note-item {
     background-color: #ffffff; /* White background for individual notes */
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     position: relative; /* Essential for correct positioning of child absolute elements */
+    display: flex;
+    justify-content: space-between; /* Space between note text and delete button */
+    align-items: center; /* Align items vertically */
+}
+
+.note-text {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.note-category {
+    font-size: 12px;
+    color: #999;
 }
 
 /* Delete button styling inside notes */
 .delete-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
     background: #7489ff; /* Light blue for delete buttons */
     color: white;
-    border-radius: 15px; /* Soft rounded corners */
-    padding: 0 10px;
+    border-radius: 50%; /* Rounded button */
+    width: 25px; /* Fixed width for consistency */
+    height: 25px; /* Fixed height for consistency */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    line-height: 30px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-}
-
-.delete-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #7489ff; /* Light blue for delete buttons */
-    color: white;
-    border-radius: 15px;
-    width: auto; /* Ensure the width adjusts to content size */
-    height: 30px; /* Fixed height for consistency */
-    padding: 5px 10px; /* Adjust padding if needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px; /* Check if this size is appropriate */
-    line-height: 30px; /* Ensures vertical alignment */
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    line-height: 0; /* Ensures the text is centered */
+    border: none; /* Remove default border */
 }
 
 .delete-btn:hover {
@@ -144,4 +171,3 @@ li {
         margin-bottom: 20px; /* Space between inputs and notes on mobile */
     }
 }
-
