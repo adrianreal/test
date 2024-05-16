@@ -62,8 +62,10 @@ h1, h2 {
     margin-bottom: 20px; /* Space below the note */
     padding-left: 0; /* Remove default padding */
     list-style-type: none; /* Remove default list style */
+    text-align: left; /* Left-justify the notes */
 }
 
+/* Align the green highlighted text to the left */
 .note li {
     margin-bottom: 10px; /* Space between list items */
     background: #e8f5e9; /* Light green background for better visibility */
@@ -72,11 +74,110 @@ h1, h2 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     display: flex; /* Flexbox for icon alignment */
     align-items: center; /* Vertically center the icon with the text */
+    justify-content: flex-start; /* Left-justify the content */
+    text-align: left; /* Left-justify the notes */
 }
 
 .note li i {
     margin-right: 10px; /* Space between icon and text */
     color: #4caf50; /* Icon color */
+}
+
+/* New CSS for note images */
+.note-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Adjust tag to new line below image */
+.note-category {
+    font-size: 12px;
+    color: #999;
+    display: block; /* Ensure it is displayed as a block element */
+    margin-top: 10px; /* Add some margin above */
+}
+
+/* Modal styling */
+.image-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.image-modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+}
+
+.image-modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Custom file upload styling */
+.file-upload {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 3px 5px;
+    cursor: pointer;
+    background-color: #f4f4f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.file-text {
+    color: #333;
+    font-size: 14px;
+}
+
+#fileName {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #666;
 }
 
 /* Form elements styling */
@@ -87,6 +188,7 @@ textarea, input[type="text"], select {
     border: 1px solid #ccc;
     border-radius: 4px; /* Rounded corners for form elements */
     box-sizing: border-box;
+    font-size: 13px;
 }
 
 /* Button styling */
@@ -119,8 +221,8 @@ li.note-item {
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     position: relative; /* Essential for correct positioning of child absolute elements */
     display: flex;
-    justify-content: space-between; /* Space between note text and delete button */
-    align-items: center; /* Align items vertically */
+    flex-direction: column; /* Column layout for the note content */
+    align-items: flex-start; /* Align items to the start */
 }
 
 .note-text {
@@ -131,6 +233,8 @@ li.note-item {
 .note-category {
     font-size: 12px;
     color: #999;
+    display: block; /* Ensure it is displayed as a block element */
+    margin-top: 10px; /* Add some margin above */
 }
 
 /* Delete button styling inside notes */
@@ -148,13 +252,18 @@ li.note-item {
     cursor: pointer;
     line-height: 0; /* Ensures the text is centered */
     border: none; /* Remove default border */
+    align-self: flex-end; /* Align the button to the right */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the button */
 }
 
 .delete-btn:hover {
     background: #5c67f2;
 }
 
-/* New CSS for the donation section */
+/* CSS for the donation section */
 .donation-section {
     background-color: #fffbf0; /* Light yellow background */
     padding: 20px; /* Padding around the text */
@@ -194,7 +303,6 @@ li.note-item {
         margin-bottom: 20px; /* Space between inputs and notes on mobile */
     }
 
-    /* New media query adjustments for the donation section */
     .donation-section {
         padding: 15px;
         font-size: 14px;
