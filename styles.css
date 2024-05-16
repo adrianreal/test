@@ -151,10 +151,33 @@ li.note-item {
 }
 
 .delete-btn:hover {
-    background: #5c67f2; /* Darker shade on hover */
+    background: #5c67f2;
 }
 
-/* Existing CSS rules... */
+/* New CSS for the donation section */
+.donation-section {
+    background-color: #fffbf0; /* Light yellow background */
+    padding: 20px; /* Padding around the text */
+    margin: 20px 0; /* Margin above and below the section */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center the text */
+}
+
+.donation-section p {
+    margin: 0; /* Remove default margins */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+}
+
+.donation-section a {
+    color: #4a90e2; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.donation-section a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
@@ -169,5 +192,28 @@ li.note-item {
     
     .inputs {
         margin-bottom: 20px; /* Space between inputs and notes on mobile */
+    }
+
+    /* New media query adjustments for the donation section */
+    .donation-section {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .donation-section p {
+        font-size: 14px;
+    }
+
+    .logo {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
     }
 }
