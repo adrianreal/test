@@ -156,7 +156,7 @@ h1, h2 {
     border-radius: 4px;
     color: #333;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .custom-file-upload:hover {
@@ -169,7 +169,7 @@ h1, h2 {
 
 .file-text {
     color: #333;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 #fileName {
@@ -189,6 +189,10 @@ textarea, input[type="text"], select {
     border-radius: 4px; /* Rounded corners for form elements */
     box-sizing: border-box;
     font-size: 13px;
+}
+
+textarea {
+    height: 150px; /* Increase the height of the textarea */
 }
 
 /* Button styling */
