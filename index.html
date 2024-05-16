@@ -7,8 +7,7 @@
     <title>Take Notes Online</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo3.png" type="image/x-icon">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7107771617277538"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7107771617277538" crossorigin="anonymous"></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -16,7 +15,7 @@
         "name": "Take Notes Online",
         "url": "https://takenotesonline.com",
         "logo": "https://github.com/adrianreal/test/blob/main/logo3.png?raw=true"
-        }
+    }
     </script>
     <script type="text/javascript">
         if (window.location.hostname === "www.takenotesonline.com") {
@@ -41,6 +40,14 @@
                 <h2>Add Note</h2>
                 <textarea id="noteInput" placeholder="Type your note here..."></textarea>
                 <input type="text" id="categoryInput" placeholder="Enter category (optional)">
+                <div class="file-upload">
+                    <label class="custom-file-upload">
+                        <input type="file" id="imageInput" accept="image/*" onchange="displayFileName()">
+                        Choose file
+                    </label>
+                    <span class="file-text">Upload image (optional)</span>
+                </div>
+                <span id="fileName"></span>
                 <button type="button" onclick="addNote()">Add Note</button>
 
                 <h2>Search and Filter</h2>
