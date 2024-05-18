@@ -59,6 +59,11 @@
             <div class="notes-display">
                 <h2>My Notes</h2>
                 <ul id="notesList"></ul>
+                <button type="button" id="startDownloadButton" onclick="startDownloadProcess()">Download Notes as PDF</button>
+                <div id="downloadControls" style="display:none;">
+                    <p>Please select notes to download by clicking the checkboxes.</p>
+                    <button type="button" id="finalDownloadButton" onclick="downloadSelectedNotes()">Download Selected Notes as PDF</button>
+                    <button type="button" class="cancel-btn" onclick="exitSelectionMode()">Cancel</button> <!-- Added class for cancel button -->                </div>
             </div>
         </div>
         <div class="donation-section">
@@ -68,7 +73,19 @@
             <p>&copy; 2024 Take Notes Online. All rights reserved.</p>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Modal for editing notes -->
+    <div id="editModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <p>Edit your note below:</p> <!-- Added description -->
+            <textarea id="editNoteText"></textarea>
+            <button onclick="saveEditedNote()">Save</button>
+            <button class="cancel-btn" onclick="closeEditModal()">Cancel</button> <!-- Added class for cancel button -->
+        </div>
+    </div>
 </body>
 </html>
