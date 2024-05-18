@@ -123,7 +123,9 @@ h1, h2 {
     width: 90%; /* Increased width */
     max-width: 800px; /* Increased max-width */
     border-radius: 8px;
+    overflow: auto; /* Allow scrolling if content overflows */
 }
+
 
 .close {
     color: #aaa;
@@ -375,4 +377,10 @@ body.selecting-notes .note-item {
 
 body.selecting-notes .note-item.selected {
     background-color: #d0e8ff; /* Highlight color for selected notes */
+}
+
+body.zoomed {
+    transform: scale(1.2); /* Adjust the scale as needed */
+    transform-origin: center center;
+    overflow: hidden; /* Prevent scrolling while zoomed */
 }
