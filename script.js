@@ -95,6 +95,31 @@ function displayNotes() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    displayNotes();
+    populateCategoryFilter();
+
+    // Event listener to close modal on 'Escape' key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeEditModal();
+        }
+    });
+
+    // Zoom in/out functionality for mobile only
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        const inputs = document.querySelectorAll('textarea, input[type="text"]');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                document.body.classList.add('zoomed');
+                // Ensure the input is visible when focused
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            input.addEventListener('blur', () => document.body.classList.remove('zoomed'));
+        });
+    }
+});
+
 function openEditModal(index) {
     const notes = JSON.parse(localStorage.getItem('notes') || '[]');
     const note = notes[index];
@@ -103,6 +128,9 @@ function openEditModal(index) {
 
     editNoteText.value = note.text;
     modal.style.display = 'block';
+
+    // Ensure the modal is visible when opened
+    modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     // Save the current note index for reference in saveEditedNote function
     modal.setAttribute('data-index', index);
