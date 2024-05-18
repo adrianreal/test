@@ -368,6 +368,7 @@ li.note-item {
 body.zoomed {
     transform: scale(1.2); /* Adjust the scale as needed */
     transform-origin: center center;
+    overflow: hidden; /* Prevent scrolling while zoomed */
 }
 
 /* Highlighting selected notes */
@@ -377,10 +378,4 @@ body.selecting-notes .note-item {
 
 body.selecting-notes .note-item.selected {
     background-color: #d0e8ff; /* Highlight color for selected notes */
-}
-
-body.zoomed {
-    transform: scale(1.2); /* Adjust the scale as needed */
-    transform-origin: center center;
-    overflow: hidden; /* Prevent scrolling while zoomed */
 }
