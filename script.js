@@ -2,11 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     displayNotes();
     populateCategoryFilter();
 
-    // Event listener to close modal on 'Escape' key press
+    // Event listener to close modals on 'Escape' key press
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeEditModal();
             closeModal();
+            document.body.classList.remove('zoomed'); // Ensure zoomed-out view
         }
     });
 
@@ -14,11 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         const inputs = document.querySelectorAll('textarea, input[type="text"]');
         inputs.forEach(input => {
-            input.addEventListener('focus', () => document.body.classList.add('zoomed'));
-            input.addEventListener('blur', () => document.body.classList.remove('zoomed'));
+            input.addEventListener('focus', () => {
+                document.body.classList.add('zoomed');
+                // Ensure the input is visible when focused
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            input.addEventListener('blur', () => {
+                document.body.classList.remove('zoomed');
+            });
         });
     }
 });
+
 
 function addNote() {
     const noteInput = document.getElementById('noteInput');
@@ -58,6 +66,7 @@ function addNote() {
         categoryInput.value = '';
         imageInput.value = '';
         document.getElementById('fileName').textContent = ''; // Clear the file name display
+        document.body.classList.remove('zoomed'); // Ensure zoomed-out view
     }
 }
 
@@ -132,6 +141,7 @@ function openEditModal(index) {
 
     // Ensure the modal is visible when opened
     modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.body.classList.add('zoomed'); // Ensure zoomed-in view
 
     // Save the current note index for reference in saveEditedNote function
     modal.setAttribute('data-index', index);
@@ -169,7 +179,7 @@ function expandImage(imageUrl) {
     modal.style.display = 'flex'; // Ensure the modal is visible
 
     // For mobile, ensure full zoom-out view
-    document.body.classList.remove('zoomed');
+    document.body.classList.add('zoomed'); // Ensure zoomed-in view
 }
 
 function closeModal() {
