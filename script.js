@@ -7,24 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.key === 'Escape') {
             closeEditModal();
             closeModal();
-            document.body.classList.remove('zoomed'); // Ensure zoomed-out view
         }
     });
 
     // Zoom in/out functionality for mobile only
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        const inputs = document.querySelectorAll('textarea, input[type="text"]');
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                document.body.classList.add('zoomed');
-                // Ensure the input is visible when focused
-                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-            input.addEventListener('blur', () => {
-                document.body.classList.remove('zoomed');
-            });
+    // Ensure the input is visible when focused (removed zoom behavior)
+    const inputs = document.querySelectorAll('textarea, input[type="text"]');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
-    }
+    });
 });
 
 
@@ -105,30 +98,6 @@ function displayNotes() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    displayNotes();
-    populateCategoryFilter();
-
-    // Event listener to close modal on 'Escape' key press
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeEditModal();
-        }
-    });
-
-    // Zoom in/out functionality for mobile only
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        const inputs = document.querySelectorAll('textarea, input[type="text"]');
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                document.body.classList.add('zoomed');
-                // Ensure the input is visible when focused
-                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-            input.addEventListener('blur', () => document.body.classList.remove('zoomed'));
-        });
-    }
-});
 
 function openEditModal(index) {
     const notes = JSON.parse(localStorage.getItem('notes') || '[]');
@@ -139,9 +108,9 @@ function openEditModal(index) {
     editNoteText.value = note.text;
     modal.style.display = 'block';
 
-    // Ensure the modal is visible when opened
+    // Ensure the modal is visible when opened and focus on the edit box
     modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    document.body.classList.add('zoomed'); // Ensure zoomed-in view
+    editNoteText.focus(); // Directly focus on the edit box
 
     // Save the current note index for reference in saveEditedNote function
     modal.setAttribute('data-index', index);
@@ -150,7 +119,6 @@ function openEditModal(index) {
 function closeEditModal() {
     const modal = document.getElementById('editModal');
     modal.style.display = 'none';
-    document.body.classList.remove('zoomed'); // Ensure zoomed class is removed
 }
 
 function saveEditedNote() {
