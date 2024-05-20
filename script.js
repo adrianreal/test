@@ -14,13 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ensure the input is visible when focused (removed zoom behavior)
     const inputs = document.querySelectorAll('textarea, input[type="text"]');
     inputs.forEach(input => {
-        input.addEventListener('focus', () => {
+        input.addEventListener('focus', () => { 
             input.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     });
 });
 
 
+// Add this to the addNote function to ensure zoom out after adding a note
 function addNote() {
     const noteInput = document.getElementById('noteInput');
     const categoryInput = document.getElementById('categoryInput');
@@ -62,6 +63,15 @@ function addNote() {
         document.body.classList.remove('zoomed'); // Ensure zoomed-out view
     }
 }
+
+// Ensure zoom out when focus is lost (blur event) for noteInput and categoryInput
+document.getElementById('noteInput').addEventListener('blur', () => {
+    document.body.classList.remove('zoomed');
+});
+document.getElementById('categoryInput').addEventListener('blur', () => {
+    document.body.classList.remove('zoomed');
+});
+
 
 function deleteNote(index) {
     const notes = JSON.parse(localStorage.getItem('notes') || '[]');
