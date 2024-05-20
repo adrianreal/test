@@ -140,6 +140,7 @@ function openEditModal(index) {
 function closeEditModal() {
     const modal = document.getElementById('editModal');
     modal.style.display = 'none';
+    document.body.classList.remove('zoomed'); // Ensure zoomed class is removed
 }
 
 function saveEditedNote() {
@@ -165,12 +166,17 @@ function expandImage(imageUrl) {
             <img src="${imageUrl}" alt="Expanded Image">
         </div>`;
     document.body.appendChild(modal);
+    modal.style.display = 'flex'; // Ensure the modal is visible
+
+    // For mobile, ensure full zoom-out view
+    document.body.classList.remove('zoomed');
 }
 
 function closeModal() {
     const modal = document.querySelector('.image-modal');
     if (modal) {
         modal.remove();
+        document.body.classList.remove('zoomed'); // Ensure zoomed class is removed
     }
 }
 
