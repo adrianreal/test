@@ -37,6 +37,7 @@ body, html {
     padding: 10px; /* Padding inside the notes area */
     border-radius: 5px; /* Rounded corners for the notes area */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow for depth */
+    line-height: 1.5;
     white-space: pre-wrap; /* Preserve white space and new lines */
 }
 
@@ -151,6 +152,7 @@ h1, h2 {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px; /* Larger font size */
+    line-height: 1.5;
     white-space: pre-wrap; /* Preserve white space and new lines */
 }
 
@@ -263,6 +265,7 @@ li.note-item {
     display: flex;
     flex-direction: column; /* Column layout for the note content */
     align-items: flex-start; /* Align items to the start */
+    line-height: 1.5;
     white-space: pre-wrap; /* Preserve white space and new lines */
 }
 
