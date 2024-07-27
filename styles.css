@@ -62,7 +62,7 @@ h1, h2 {
 .note {
     color: #666; /* Lighter grey for the note text */
     font-size: 14px; /* Smaller font size */
-    margin-bottom: 20px; /* Space below the note */
+    margin-bottom: 10px; /* Space below the note */
     padding-left: 0; /* Remove default padding */
     list-style-type: none; /* Remove default list style */
     text-align: left; /* Left-justify the notes */
