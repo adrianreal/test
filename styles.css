@@ -266,6 +266,7 @@ li.note-item {
 .note-text {
     display: block;
     margin-bottom: 5px;
+    white-space: pre-wrap;
 }
 
 .note-category {
