@@ -37,9 +37,6 @@ body, html {
     padding: 10px; /* Padding inside the notes area */
     border-radius: 5px; /* Rounded corners for the notes area */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow for depth */
-    white-space: pre-wrap; /* Preserve white space and new lines */
-    line-height: 1.5; /* Adjust line-height for better readability */
-    margin: 0; /* Remove any extra margin */
 }
 
 /* Styling for headers within the app */
@@ -62,7 +59,7 @@ h1, h2 {
 .note {
     color: #666; /* Lighter grey for the note text */
     font-size: 14px; /* Smaller font size */
-    margin-bottom: 10px; /* Space below the note */
+    margin-bottom: 20px; /* Space below the note */
     padding-left: 0; /* Remove default padding */
     list-style-type: none; /* Remove default list style */
     text-align: left; /* Left-justify the notes */
@@ -144,21 +141,17 @@ h1, h2 {
     cursor: pointer;
 }
 
-/* Edit note textarea styling */
-/* Edit note textarea styling */
 #editNoteText {
     width: 100%;
     height: 300px; /* Increased height */
     padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px; /* Larger font size */
-    white-space: pre-wrap; /* Preserve white space and new lines */
-    line-height: 1.5; /* Adjust line-height for better readability */
-    margin: 0; /* Remove any extra margin */
-    padding: 10px; /* Ensure consistent padding */
 }
+
 button {
     background-color: #4a90e2; /* Bright blue for buttons */
     color: white;
@@ -257,30 +250,29 @@ ul {
     padding: 0;
 }
 
+/* Individual note styling */
 li.note-item {
     background-color: #ffffff; /* White background for individual notes */
-    margin: 5px 0; /* Reduced margin to decrease space between notes */
-    padding: 2px 5px; /* Further reduced padding inside the notes */
+    margin-top: 10px;
+    padding: 10px;
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     position: relative; /* Essential for correct positioning of child absolute elements */
     display: flex;
     flex-direction: column; /* Column layout for the note content */
     align-items: flex-start; /* Align items to the start */
-    white-space: pre-wrap; /* Preserve white space and new lines */
-    line-height: 1.5; /* Adjust line-height for better readability */
 }
 
 .note-text {
     display: block;
-    margin-bottom: 1px; /* Reduced margin below the note text */
+    margin-bottom: 5px;
 }
 
 .note-category {
     font-size: 12px;
     color: #999;
     display: block; /* Ensure it is displayed as a block element */
-    margin-top: 1px; /* Reduced margin above */
+    margin-top: 10px; /* Add some margin above */
 }
 
 /* Delete button styling inside notes */
