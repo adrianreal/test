@@ -257,11 +257,10 @@ ul {
     padding: 0;
 }
 
-/* Individual note styling */
 li.note-item {
     background-color: #ffffff; /* White background for individual notes */
     margin: 5px 0; /* Reduced margin to decrease space between notes */
-    padding: 5px 10px; /* Reduced padding inside the notes */
+    padding: 2px 5px; /* Further reduced padding inside the notes */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     position: relative; /* Essential for correct positioning of child absolute elements */
