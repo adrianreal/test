@@ -417,27 +417,28 @@ body.selecting-notes .note-item.selected {
 }
 
 .highlight-content {
-    padding: 15px;
-    margin: 20px 0;
-    border-left: 5px solid #28a745; /* Green border to match checkmark */
-    background-color: #d4edda; /* Light green background */
-    border-radius: 5px;
-    font-size: 1.1em;
+    padding: 10px 15px; /* Match the padding with the top green sections */
+    margin: 10px 0; /* Reduced margin */
+    border-left: 5px solid #4caf50; /* Same green border as the top sections */
+    background-color: #e8f5e9; /* Same green background as the top sections */
+    border-radius: 4px; /* Same rounded corners */
+    font-size: 14px; /* Match font size with the top sections */
     display: flex;
     align-items: center;
 }
 
 .highlight-content i {
     margin-right: 10px;
-    color: #28a745;
-    font-size: 1.5em;
+    color: #4caf50; /* Same icon color */
+    font-size: 1.2em; /* Slightly smaller font size */
 }
 
 .highlight-content h2 {
     margin: 0 0 5px 0;
-    font-size: 1.2em;
+    font-size: 16px; /* Reduced font size to match top sections */
 }
 
 .highlight-content p {
     margin: 0;
+    font-size: 14px; /* Match font size with the top sections */
 }
