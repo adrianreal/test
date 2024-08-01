@@ -415,3 +415,29 @@ body.selecting-notes .note-item.selected {
     cursor: pointer;
     color: #333;
 }
+
+.highlight-content {
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #28a745; /* Green border to match checkmark */
+    background-color: #d4edda; /* Light green background */
+    border-radius: 5px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.highlight-content i {
+    margin-right: 10px;
+    color: #28a745;
+    font-size: 1.5em;
+}
+
+.highlight-content h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.highlight-content p {
+    margin: 0;
+}
